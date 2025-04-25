@@ -1,45 +1,58 @@
 import { useEffect, useState } from 'react' 
-import { apiDB } from '.api/api'
+import { apiDB } from './api/api'
 import style from './Req.module.css'
-
-
+import { Card } from './components/Card'
+import { Menu } from './components/menu'
+ 
 export default function Req(){
     const [data, setData] = useState([])
-    const [page, setPage] = useState([])
-    const [erro, setErro] = useState([])
-    const [searchName, setSearchName] = useState("")
+    const [page, setPage] = useState("")
+
+    const [erro, setErro] = useState(false)
+   
     useEffect(() => {
-        apiDB.get(`/character/?page=${page}&name=${searchName}`).then((res) =>{
-          setData(res.data.results)
-        }).catch((erro)=>{
-          if(erro.response.status ===400){
+        apiDB.get(`/character?page=${page}`).then((res) =>{
+          setData(res.data.items)
+          console.log(res.data.items)
+
+
+        }).catch((error)=>{
+          if(error.respose && error.response.status === 404){
               setErro(true)
           }
-          console.log(erro)
+          console.log(error)
           
         })
       
       
-      }, [page, searchName])
+      }, [page])
       
-      console.log(data)
+
       return (
+        <>
+        <Menu option01 ='Voltar' option02=""/>
+        
           <section className={style.wrapPage}>
-              <h1>Dragon Ball API</h1>
-              <input type="text" placeholder='Digite um pagina (1/42)' value={page} onChange={(e) => setPage(e.target.value)}/>
-              <input type="text" placeholder='Digite um nome' value={searchName} onChange={(e) => setSearchName(e.target.value)} />
-              {erro && <p>Pagina não encontrada</p>}
-          
-              <div className={style.wrapCards}>
-              {data.map((item, index)=>{
-                  return (
-                      <div key={index}>
-                         <Card name={item.name} image={item.image}/>
-                      </div>
-                  )
-              })}
-              </div>
+            <div className={style.imageApi}>
+            <h1>Dragon Ball API</h1>
+            </div>
+            <h1 className={style.titleApi}>The Dragon Ball Api</h1>,
+             <div className={style.containerInput}>
+                <input type="text" placeholder='Digite uma pagina entre 1 a 5' value={page} onChange={(e) => setPage(e.target.value)}/>
+             {erro && <p>Página não existe</p>}
+             </div>
+         
+         <div className={style.wrapCards}>
+        {data.map((item, index) => {
+            return(
+                <div key={index}>
+                    <Card name={item.name} image={item.image} ki={item.ki} maxKi={item.maxKi} race={item.race} gender={item.gender} affliation={item.affliation} ></Card>
+                </div>
+            )
+        })}
+         </div>     
             
           </section>
+          </>
       )
 }
