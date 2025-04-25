@@ -6,18 +6,18 @@ import { Menu } from './components/menu'
  
 export default function Req(){
     const [data, setData] = useState([])
-    const [page, setPage] = useState("")
+    const [page, setPage] = useState("1")
 
     const [erro, setErro] = useState(false)
    
     useEffect(() => {
-        apiDB.get(`/character?page=${page}`).then((res) =>{
+        apiDB.get(`/characters?page=${page}`).then((res) =>{
           setData(res.data.items)
           console.log(res.data.items)
 
 
         }).catch((error)=>{
-          if(error.respose && error.response.status === 404){
+          if(error.response && error.response.status === 404){
               setErro(true)
           }
           console.log(error)
