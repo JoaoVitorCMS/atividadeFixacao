@@ -6,7 +6,7 @@ import { Menu } from './components/menu'
  
 export default function Req(){
     const [data, setData] = useState([])
-    const [page, setPage] = useState("1")
+    const [page, setPage] = useState("")
 
     const [erro, setErro] = useState(false)
    
@@ -17,7 +17,7 @@ export default function Req(){
 
 
         }).catch((error)=>{
-          if(error.response && error.response.status === 404){
+          if(error.respose && error.response.status === 404){
               setErro(true)
           }
           console.log(error)

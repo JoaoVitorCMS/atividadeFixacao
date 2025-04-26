@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+  
+    background-color: #33363f;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
