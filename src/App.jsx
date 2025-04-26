@@ -1,5 +1,6 @@
 import { Menu } from "./components/menu"
 import imagem from "./assets/images/imagem.jpg"
+import segundaImagem from './assets/images/dragonballsuperz.png'; 
 import style from "./App.module.css"
 import { useState } from 'react'
 
@@ -13,11 +14,10 @@ function App() {
      <Menu option01= 'Início' option02='ApiPersonagens'></Menu>
      <section  className={style.Inicio}>
       <div className={style.divPrimaria}>
+      <img src={segundaImagem} alt="Dragon Ball Super Z Título" className={style.tituloImagem} />
         <img src={imagem} alt="imagem" />
-        <br />
         <div className={style.wrapInfo}>
-        <p className={style.textoDB}
-        >
+        <p className={style.textoDB}>
           Em Dragon Ball, Goku alcançou o divino Instinto Superior, técnica de luta instintiva com estágios crescentes de poder.
           Vegeta, impulsionado por seu orgulho, despertou o destrutivo Ego Superior.
           Outros guerreiros também possuem formas poderosas: Piccolo obteve força através de assimilações;

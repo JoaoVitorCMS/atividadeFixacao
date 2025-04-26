@@ -30,10 +30,10 @@ export default function Req(){
 
       return (
         <>
-        <Menu option01 ='Voltar' option02=""/>
+        <Menu option01 ='Voltar'/>
         
           <section className={style.wrapPage}>
-            <div className={style.imageApi}>
+            <div className={style.imageCardApi}>
             <h1>Dragon Ball API</h1>
             </div>
             <h1 className={style.titleApi}>The Dragon Ball Api</h1>,
@@ -46,7 +46,13 @@ export default function Req(){
         {data.map((item, index) => {
             return(
                 <div key={index}>
-                    <Card name={item.name} image={item.image} ki={item.ki} maxKi={item.maxKi} race={item.race} gender={item.gender} affliation={item.affliation} ></Card>
+                    <Card name={item.name} 
+                    image={item.image} 
+                    ki={item.ki} maxKi={item.maxKi} 
+                    race={item.race} 
+                    gender={item.gender} 
+                    affliation={item.affliation}>
+                    </Card>
                 </div>
             )
         })}

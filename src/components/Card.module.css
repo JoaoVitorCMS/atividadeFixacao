@@ -1,95 +1,62 @@
-/* Card.module.css */
+.imgCard{
+  height: 300px;
+  width: auto;
+ z-index: 800;
+ transform: scale(1.1);
+ transition: all 600ms ease-in-out;
+}
 
-.cardsEstilo {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 1rem;
-    overflow: hidden; /* Garante que a imagem arredondada não vaze */
-    display: flex;
-    flex-direction: column; /* Layout padrão para mobile */
-    align-items: center;
-    text-align: center;
-  }
-  
-  .imgApi {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
-  
-  .imgCard {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  }
-  
-  .infoApi {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .title {
-    color: #333;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .titleDesc {
-    color: #777;
-    font-size: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 0.25rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-  }
-  
-  .desc {
-    color: #555;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Layout para telas maiores (a partir de 768px) */
-  @media (min-width: 768px) {
-    .cardsEstilo {
-      flex-direction: row; /* Layout lado a lado para desktop */
-      align-items: flex-start;
-      text-align: left;
-      max-width: 600px; /* Largura máxima do card em desktop */
-      margin: 2rem auto; /* Centraliza o card em desktop */
-    }
-  
-    .imgApi {
-      width: 50%;
-      padding-right: 1rem;
-    }
-  
-    .infoApi {
-      width: 50%;
-      padding-left: 1rem;
-      align-items: flex-start;
-    }
-  
-    .title {
-      font-size: 2rem;
-    }
-  
-    .titleDesc {
-      font-size: 1.1rem;
-      margin-top: 0.75rem;
-    }
-  
-    .desc {
-      font-size: 1.2rem;
-    }
-  }
+.imgCard:hover{
+ transform: scale(1.4);
+
+}
+
+.cardsEstilo{
+ width: 280px;
+ display: flex;
+ flex-direction: column;
+ background: rgb(60, 62, 68);
+ border-radius: 0.5rem;
+ margin: 0.75rem;
+ cursor: pointer;
+ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.imgCardApi{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background-image: url('.assets/images/torneiodopoder.jpg');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ border-radius: 0.75rem;
+}
+.infoApi{
+ padding: 0.75rem;
+ color: rgb(255, 255, 255);
+ display: flex;
+ flex-direction: column;
+ gap: 0.3rem;
+}
+.title{
+color: white;
+font-size: 2rem;
+font-weight: 800;
+padding-bottom: 0.5rem;
+text-align: center;
+z-index: 800;
+}
+
+.titleDesc{
+ font-weight: 600;
+ font-size: 1rem;
+ color: white;
+ 
+}
+
+.desc{
+ font-size: 18px;
+ color: rgb(251, 192, 45);
+ font-weight: 700;
+}
