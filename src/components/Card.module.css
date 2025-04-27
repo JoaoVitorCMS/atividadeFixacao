@@ -1,62 +1,63 @@
-.imgCard{
+.cardsEstilo {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  background: rgb(60, 62, 68);
+  border-radius: 0.5rem;
+  margin: 0.75rem;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.imgCardApi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.75rem;
+  background-image: url('../assets/images/torneiodopoder.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: overlay; 
+}
+
+.imgCard {
   height: 300px;
   width: auto;
- z-index: 800;
- transform: scale(1.1);
- transition: all 600ms ease-in-out;
+  z-index: 800;
+  transform: scale(1.1);
+  transition: all 600ms ease-in-out;
 }
 
-.imgCard:hover{
- transform: scale(1.4);
-
+.imgCard:hover {
+  transform: scale(1.4);
 }
 
-.cardsEstilo{
- width: 280px;
- display: flex;
- flex-direction: column;
- background: rgb(60, 62, 68);
- border-radius: 0.5rem;
- margin: 0.75rem;
- cursor: pointer;
- box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+.infoApi {
+  padding: 0.75rem;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
-.imgCardApi{
- display: flex;
- justify-content: center;
- align-items: center;
- background-image: url('.assets/images/torneiodopoder.jpg');
- background-size: cover;
- background-repeat: no-repeat;
- background-position: center;
- border-radius: 0.75rem;
-}
-.infoApi{
- padding: 0.75rem;
- color: rgb(255, 255, 255);
- display: flex;
- flex-direction: column;
- gap: 0.3rem;
-}
-.title{
-color: white;
-font-size: 2rem;
-font-weight: 800;
-padding-bottom: 0.5rem;
-text-align: center;
-z-index: 800;
+.title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  padding-bottom: 0.5rem;
+  text-align: center;
 }
 
-.titleDesc{
- font-weight: 600;
- font-size: 1rem;
- color: white;
- 
+.titleDesc {
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
 }
 
-.desc{
- font-size: 18px;
- color: rgb(251, 192, 45);
- font-weight: 700;
+.desc {
+  font-size: 18px;
+  color: rgb(251, 192, 45);
+  font-weight: 700;
 }

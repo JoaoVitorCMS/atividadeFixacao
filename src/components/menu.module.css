@@ -5,13 +5,15 @@
   height: 60px;
   top: 0px;
   background-color: #ff7b00; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 1rem;
   z-index: 999;
 }
 
 .logoNav {
-  width: 60px;
-  height: 60px;
-  margin-left: 20px;
+  width: 40px; 
+  height: 40px;
   transition: transform 0.5s ease;
 }
 
@@ -27,21 +29,22 @@
 .nav-menu {
   display: flex;
   list-style: none;
-  padding-left: 24px;
+  padding: 0;
+  margin: 0;
   align-items: center;
 }
 
 .nav-link {
   text-decoration: none;
-  font-size: 20px;
-  padding: 0.8rem;
+  font-size: 18px; 
+  padding: 0.5rem;
   font-family: Georgia, 'Times New Roman', Times, serif;
   line-height: 1.6;
-  color: white; 
+  color: white;
   opacity: 0.8;
   font-weight: 900;
   margin-right: 0.5rem;
-  position: relative; 
+  position: relative;
 }
 
 .nav-link::after {
@@ -51,14 +54,84 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  background: linear-gradient(90deg, #4FC3F7, #FFF, #4FC3F7); 
-  transition: width 0.5s ease-in-out; 
+  background: linear-gradient(90deg, #4FC3F7, #FFF, #4FC3F7);
+  transition: width 0.5s ease-in-out;
 }
 
 .nav-link:hover::after {
-  width: 100%; 
+  width: 100%;
 }
 
 .nav-link:hover {
   opacity: 1.0;
+}
+
+.hamburger {
+  display: flex;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainMenuIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+.nav-menu {
+  display: none; 
+  flex-direction: column;
+  position: absolute;
+  top: 60px; 
+  left: 0;
+  background-color:#ff7b00;
+  width: 100%;
+  padding: 1rem;
+  align-items: flex-start;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.nav-menu.open {
+  display: flex; 
+}
+
+@media (min-width: 768px) {
+  .navBar {
+    justify-content: flex-start; 
+    padding: 0 2rem;
+  }
+
+  .hamburger {
+    display: none; 
+  }
+
+  .nav-menu {
+    display: flex; 
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    width: auto;
+    padding: 0;
+    align-items: center;
+    margin-left: auto; 
+  }
+
+  .nav-link {
+    font-size: 20px;
+    padding: 0.8rem;
+    margin-right: 1rem;
+  }
+
+  .logoNav {
+    width: 60px;
+    height: 60px;
+    margin-left: 0; 
+  }
 }
