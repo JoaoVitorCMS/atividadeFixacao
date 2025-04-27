@@ -3,7 +3,7 @@ import { apiDB } from './api/api';
 import style from './Req.module.css';
 import { Card } from './components/Card';
 import { Menu } from './components/menu';
-import dragonBallSuperZImage from './assets/images/dragonballsuperz.png'; // Importe a imagem
+import dragonBallSuperZImage from './assets/images/dragonballsuperz.png'; 
 
 export default function Req() {
   const [data, setData] = useState([]);
@@ -29,7 +29,7 @@ export default function Req() {
       <Menu option01="Voltar" />
 
       <section className={style.wrapPage}>
-        <div className={style.apiTitleSection}> {/* Container para a imagem e o título */}
+        <div className={style.apiTitleSection}> 
           <img
             src={dragonBallSuperZImage}
             alt="Dragon Ball Super Z"

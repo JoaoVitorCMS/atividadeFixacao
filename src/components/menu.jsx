@@ -1,6 +1,6 @@
 import style from './menu.module.css';
 import logoNav from '../assets/images/logo_dragonball.png';
-import MainMenuIcon from '../assets/images/main-menu.png'; // Importe a imagem do menu
+import MainMenuIcon from '../assets/images/main-menu.png'; 
 import { useState } from 'react';
 
 export const Menu = (props) => {
@@ -15,7 +15,7 @@ export const Menu = (props) => {
       <nav className={`navegacao ${style['navBar']}`}>
         <img src={logoNav} alt="logoNav" className={style.logoNav} />
         <button className={style.hamburger} onClick={toggleMenu}>
-          <img src={MainMenuIcon} alt="Menu" className={style.mainMenuIcon} /> {/* Ícone do menu */}
+          <img src={MainMenuIcon} alt="Menu" className={style.mainMenuIcon} />
         </button>
         <ul className={`${style['nav-menu']} ${isOpen ? style.open : ''}`}>
           <li>
