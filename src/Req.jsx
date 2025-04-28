@@ -24,6 +24,16 @@ export default function Req() {
       });
   }, [page]);
 
+  const handlePageChange = (e) => {
+    const value = e.target.value;
+      if (!isNaN(value) && value >= 0 && value <= 6){
+        setPage(value);
+        setErro(false);
+      }else {
+        setErro(true);
+      }
+  };
+
   return (
     <>
       <Menu option01="Voltar" />
@@ -43,7 +53,7 @@ export default function Req() {
             type="text"
             placeholder="Digite uma pagina entre 1 a 6"
             value={page}
-            onChange={(e) => setPage(e.target.value)}
+            onChange={handlePageChange}
           />
           {erro && <p>Página não existe</p>}
         </div>
