@@ -3,12 +3,14 @@ import { apiDB } from './api/api';
 import style from './Req.module.css';
 import { Card } from './components/Card';
 import { Menu } from './components/menu';
-import dragonBallSuperZImage from './assets/images/dragonballsuperz.png'; 
+import dragonBallSuperZImage from './assets/images/dragonballsuperz.png';
+import Modal from './components/modalinfo'; 
 
 export default function Req() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState('');
   const [erro, setErro] = useState(false);
+  const [modal, setModal] = useState(); 
 
   useEffect(() => {
     apiDB.get(`/characters?page=${page}`)
@@ -17,7 +19,7 @@ export default function Req() {
         console.log(res.data.items);
       })
       .catch((error) => {
-        if (error.respose && error.response.status === 404) {
+        if (error.response && error.response.status === 404) {
           setErro(true);
         }
         console.log(error);
@@ -26,17 +28,25 @@ export default function Req() {
 
   const handlePageChange = (e) => {
     const value = e.target.value;
-      if (!isNaN(value) && value >= 0 && value <= 6){
-        setPage(value);
-        setErro(false);
-      }else {
-        setErro(true);
-      }
+    if (!isNaN(value) && value >= 0 && value <= 6) {
+      setPage(value);
+      setErro(false);
+    } else {
+      setErro(true);
+    }
   };
 
   return (
     <>
       <Menu option01="Voltar" />
+
+    
+      {modal !== undefined && (
+        <Modal
+          data={data[modal]} 
+          close={() => setModal(undefined)}
+        />
+      )}
 
       <section className={style.wrapPage}>
         <div className={style.apiTitleSection}> 
@@ -55,12 +65,18 @@ export default function Req() {
             value={page}
             onChange={handlePageChange}
           />
+          <br />
           {erro && <p>Página não existe</p>}
         </div>
 
         <div className={style.wrapCards}>
           {data.map((item, index) => (
-            <div key={index}>
+            <div 
+              key={index} 
+              className={style.cardContainer} 
+              onClick={() => setModal(index)} 
+              style={{ cursor: 'pointer' }} 
+            >
               <Card
                 name={item.name}
                 image={item.image}
